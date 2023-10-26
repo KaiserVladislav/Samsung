@@ -11,6 +11,10 @@ import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/*TODO: minefield I
+*  1) placing mines
+*  2) */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -50,28 +54,25 @@ public class MainActivity extends AppCompatActivity {
                 cells[i][j].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        view.setBackgroundColor(Color.RED);
 
-
+                        view.setBackgroundColor(getColor(R.color.red));
                     }
                 });
                 cells[i][j].setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View v) {
-
                         v.setBackgroundColor(Color.BLUE);
-                        mines_status.setText(""+MINESCONST+"/"+MinesCurrent);
-                        MinesCurrent--;
-                        if(MinesCurrent==0){
-                            Toast.makeText(getApplicationContext(),"WIN",Toast.LENGTH_LONG).show();
-                        }
 
+
+//                        if(MinesCurrent==0){
+//                            Toast.makeText(getApplicationContext(),"WIN",Toast.LENGTH_LONG).show();
+//                        }
                         return true;
                     }
                 });
 
-                cells[i][j].setText(""+j+HEIGHT*i);
-                cells[i][j].setTag(""+j+HEIGHT*i);
+                cells[i][j].setText((i+1)+" "+(j+1));
+                cells[i][j].setTag(""+j+HEIGHT*(i+1));
                 layout.addView(cells[i][j]);
 
             }
