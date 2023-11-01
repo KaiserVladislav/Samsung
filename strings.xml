@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Shendrik_cells</string>
-    <string name="placeholder">PLACEHOLDER</string>
+    <string name="app_name">Samsung</string>
+    <string name="placeholder">placeholder</string>
+    <string name="status_victory">You won!</string>
+    <string name="status_defeat">You lost!</string>
+    <string name="status_ongoing">The game is on…</string>
 </resources>

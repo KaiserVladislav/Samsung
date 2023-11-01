@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Button xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="80dp"
-    android:layout_height="80dp"
-    android:text="10"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:id="@+id/button_gradient"
     android:textColor="@color/white"
     android:textAlignment="center"
-    android:textSize="20sp"
+    android:background="@drawable/button_golden_gradient"
+    android:textSize="20sp">
 
-    >
 </Button>
