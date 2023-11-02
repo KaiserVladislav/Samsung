@@ -8,19 +8,6 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/TV2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/placeholder"
-        android:textColor="@color/golden"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/TV"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
-
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
@@ -47,6 +34,20 @@
 
     </HorizontalScrollView>
 
+
+    <TextView
+        android:id="@+id/TV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/placeholder"
+        android:textColor="@color/golden"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/retry_button"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
     <TextView
         android:id="@+id/TV"
         android:layout_width="wrap_content"
@@ -55,9 +56,25 @@
         android:textColor="@color/golden"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/TV2"
+        app:layout_constraintEnd_toStartOf="@+id/retry_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <Button
+        android:id="@+id/retry_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@null"
+        android:background="@drawable/button_golden_gradient"
+        android:textColor="@color/white"
+        android:text="Retry"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/TV2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/TV"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
 

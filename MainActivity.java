@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // TODO: DECLARATION OF CONSTANTS
-    final int MINESCONST = 3;
-    int MinesCurrent = 3;
     final int WIDTH = 9;
     final int HEIGHT = 9;
 
@@ -38,8 +36,11 @@ public class MainActivity extends AppCompatActivity {
         LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
 
         Drawable button_pressed_red = getApplicationContext().getResources().getDrawable(R.drawable.button_red_gradient);
-        Drawable button_unpressed_golden = getApplicationContext().getResources().getDrawable(R.drawable.button_golden_gradient);
+        Drawable button_golden = getApplicationContext().getResources().getDrawable(R.drawable.button_golden_gradient);
+        Drawable button_unpressed_gray = getApplicationContext().getResources().getDrawable(R.drawable.button_gray_gradient);
         Drawable button_pressed_blue = getApplicationContext().getResources().getDrawable(R.drawable.button_blue_gradient);
+        Button retry_button = findViewById(R.id.retry_button);
+
 
         Button cells[][];
         cells = new Button[HEIGHT][WIDTH];
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView mines_ratio;
         mines_ratio = findViewById(R.id.TV2);
-        mines_ratio.setText(R.string.placeholder);
+        mines_ratio.setText("Mines left: "+minesAmount[0]);
 
 
         for (int i = 0; i < HEIGHT; i++) { // TODO: Creating buttons (cell.xml type) on layout (Gridlayout class)
@@ -80,6 +81,13 @@ public class MainActivity extends AppCompatActivity {
                         if (minefield[finalI][finalJ]==1){
                             MineSweeperFunctional.detonating(MainActivity.this);
                             game_status.setText(R.string.status_defeat);
+                            retry_button.setVisibility(View.VISIBLE);
+                            retry_button.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    reload();
+                                }
+                            });
 
                         }else{
                             int temp[] = MineSweeperFunctional.clearing(minefield,finalI,finalJ);
@@ -98,8 +106,15 @@ public class MainActivity extends AppCompatActivity {
                         if (minesAmount[0]==0){
                             MineSweeperFunctional.win(MainActivity.this);
                             game_status.setText(R.string.status_victory);
+                            retry_button.setVisibility(View.VISIBLE);
+                            retry_button.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    reload();
+                                }
+                            });
                         }
-                        mines_ratio.setText(minesAmount[0]+"");
+                        mines_ratio.setText("Mines left: "+minesAmount[0]);
                         return true;
                     }
                 });
@@ -118,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void reload(){ // I dunno man
+        setContentView(R.layout.activity_main);
         generate();
     }
 

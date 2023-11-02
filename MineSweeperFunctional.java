@@ -7,14 +7,14 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class MineSweeperFunctional {
-    public static int[][]  generateMineField(Button[][] cells){ // just matrix of 1-mines 0-safe tiles
+    public static int[][]  generateMineField(Button[][] cells){
         int mineField[][]=new int[cells.length][cells[0].length];
         Random random = new Random(); // todo: target mines amount ~ 8 (of 81 cells)
         int limit=9;
         int counter=0;
         for (int i = 0; i < mineField.length; i++) {
             for (int j = 0; j < mineField[i].length; j++) {
-                mineField[i][j]= (random.nextInt(100)==8)?1:0; // normally ~ 10 for debug purposes ~ 100
+                mineField[i][j]= (random.nextInt(100)==8)?1:0; // pls change later
             }
         }
 
@@ -22,10 +22,10 @@ public class MineSweeperFunctional {
     }
 
     public static void detonating(Context context){
-        Toast.makeText(context, R.string.status_defeat,Toast.LENGTH_SHORT).show(); //gg ya livayu
+        Toast.makeText(context, R.string.status_defeat,Toast.LENGTH_SHORT).show();
     }
     public static void win(Context context){
-        Toast.makeText(context, R.string.status_victory,Toast.LENGTH_SHORT).show(); 
+        Toast.makeText(context, R.string.status_victory,Toast.LENGTH_SHORT).show();
     }
 
 
@@ -33,9 +33,6 @@ public class MineSweeperFunctional {
         int mines_around=0;
         int index_i=i;
         int index_j=j;
-        int[][] to_clear; // incomplete : implement clearing of empty tiles if first click is safe and no mines around
-
-        while(mines_around==0){
 
             for (int k = 0; k < 3; k++) {
                 for (int l = 0; l < 3; l++) {
@@ -49,12 +46,7 @@ public class MineSweeperFunctional {
 
                 }
             }
-            if (mines_around==0) // incomplete shifting
-            {
-                index_i+=1;
-            }
 
-        }
         int[] result = new int[3];
         result[0]=index_i;
         result[1]=index_j;
