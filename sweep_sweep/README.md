@@ -1,2 +1,0 @@
-# Samsung
-blah blah
