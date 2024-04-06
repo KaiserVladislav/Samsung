@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "831818700828",
+    "project_id": "secondtry-30bb5",
+    "storage_bucket": "secondtry-30bb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831818700828:android:c2519105117f189a6627d9",
+        "android_client_info": {
+          "package_name": "com.example.notification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDNaH-pq-M9a2O7ZqRlY0xPFHU3WoKbPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
